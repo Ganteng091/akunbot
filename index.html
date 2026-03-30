@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Password Manager Sederhana</title>
+<style>
+    body {
+        font-family: Arial;
+        background: #f4f4f4;
+        padding: 20px;
+    }
+    h2 {
+        text-align: center;
+    }
+    .card {
+        background: white;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    button {
+        margin-left: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h2>🔐 Penyimpan Email & Password</h2>
+
+<div id="list"></div>
+
+<script>
+const data = [
+"gjfbf@naver.com:Gjfbf1",
+"ninhkul@gmail.com:Demongoat123",
+"ezhik-deil@bk.ru:Maestrokido1",
+"myandimata4@gmail.com:Godofwar2",
+"marpet123456789@gmail.com:Kikok123",
+"vincentborcesvildosola@gmail.com:Aswang005",
+"lesterdave641@gmail.com:Az8341563895",
+"aidar.nafickow2016@yandex.ru:02Diamondrush2001",
+"babichev-97@mail.ru:011097Dad",
+"petrus.gocar86@gmail.com:Mar123",
+"nirajmagar207@gmail.com:Swethome1"
+];
+
+const container = document.getElementById("list");
+
+data.forEach(item => {
+    const [email, pass] = item.split(":");
+
+    const div = document.createElement("div");
+    div.className = "card";
+
+    div.innerHTML = `
+        <b>Email:</b> ${email}
+        <button onclick="copyText('${email}')">Copy</button>
+        <br><br>
+        <b>Password:</b> ${pass}
+        <button onclick="copyText('${pass}')">Copy</button>
+    `;
+
+    container.appendChild(div);
+});
+
+function copyText(text) {
+    navigator.clipboard.writeText(text);
+    alert("Berhasil disalin: " + text);
+}
+</script>
+
+</body>
+</html>
