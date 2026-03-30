@@ -2,33 +2,69 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Password Manager Sederhana</title>
+<title>Penyimpanan Akun Bot</title>
+
 <style>
-    body {
-        font-family: Arial;
-        background: #f4f4f4;
-        padding: 20px;
-    }
-    h2 {
-        text-align: center;
-    }
-    .card {
-        background: white;
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 10px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    button {
-        margin-left: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-    }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 20px;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px cyan;
+}
+
+#list {
+    max-width: 700px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px cyan;
+}
+
+button {
+    margin-left: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #43e97b, #38f9d7);
+}
+
+.label {
+    color: #00f2fe;
+}
 </style>
 </head>
+
 <body>
 
-<h2>🔐 Penyimpan Email & Password</h2>
+<h2>🤖 Penyimpanan Akun Bot</h2>
 
 <div id="list"></div>
 
@@ -56,10 +92,10 @@ data.forEach(item => {
     div.className = "card";
 
     div.innerHTML = `
-        <b>Email:</b> ${email}
+        <b class="label">Email:</b> ${email}
         <button onclick="copyText('${email}')">Copy</button>
         <br><br>
-        <b>Password:</b> ${pass}
+        <b class="label">Password:</b> ${pass}
         <button onclick="copyText('${pass}')">Copy</button>
     `;
 
@@ -68,7 +104,7 @@ data.forEach(item => {
 
 function copyText(text) {
     navigator.clipboard.writeText(text);
-    alert("Berhasil disalin: " + text);
+    alert("✔ Berhasil disalin: " + text);
 }
 </script>
 
