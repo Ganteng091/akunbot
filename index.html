@@ -26,7 +26,6 @@ h2 {
     margin: auto;
 }
 
-/* CARD */
 .card {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
@@ -37,20 +36,17 @@ h2 {
     box-shadow: 0 0 10px rgba(0,255,255,0.2);
 }
 
-/* TEXT */
 .label {
     color: #00f2fe;
     font-size: 14px;
 }
 
-/* FLEX BIAR RAPI DI HP */
 .row {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-/* BUTTON */
 button {
     width: 100%;
     margin-top: 5px;
@@ -64,7 +60,6 @@ button {
     cursor: pointer;
 }
 
-/* DESKTOP MODE */
 @media(min-width: 600px) {
     .row {
         flex-direction: row;
@@ -83,30 +78,12 @@ button {
 
 <body>
 
-<h2>🤖 Penyimpanan Akun Bot BY ZAIM GANTENG😘</h2>
+<h2>🤖 Penyimpanan Akun Bot BY ZAIM GANTENG 😎</h2>
 
 <div id="list"></div>
 
 <script>
 const data = [
-"gjfbf@naver.com:Gjfbf1",
-"ninhkul@gmail.com:Demongoat123",
-"ezhik-deil@bk.ru:Maestrokido1",
-"myandimata4@gmail.com:Godofwar2",
-"marpet123456789@gmail.com:Kikok123",
-"vincentborcesvildosola@gmail.com:Aswang005",
-"lesterdave641@gmail.com:Az8341563895",
-"aidar.nafickow2016@yandex.ru:02Diamondrush2001",
-"babichev-97@mail.ru:011097Dad",
-"petrus.gocar86@gmail.com:Mar123",
-"nirajmagar207@gmail.com:Swethome1",
-
-// akun baru 🔥
-"randysng11@gmail.com:Randy140278",
-"zhafirarmdni@gmail.com:Fira0911",
-"henrijsliv@gmail.com:Henrijs123",
-"aimargatuno@gmail.com:Gataluna4410",
-"vados235@mail.ru:Odon2012"
 "paramagamer0@gmail.com:Erpan1140",
 "putrianisilalahi04@gmail.com:Godbless04",
 "azridestiny99@gmail.com:Azri1172",
@@ -172,6 +149,8 @@ const data = [
 const container = document.getElementById("list");
 
 data.forEach(item => {
+    if(!item.includes(":")) return; // biar gak error kalau format salah
+
     const [email, pass] = item.split(":");
 
     const div = document.createElement("div");
